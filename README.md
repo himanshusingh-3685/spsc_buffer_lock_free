@@ -11,10 +11,6 @@ A C++17 micro-benchmark that compares two **Single-Producer Single-Consumer (SPS
 | **Lock-Free** | `spsc_queue_lock_free.tpp` | `std::atomic` acquire/release + cached index copies to eliminate false sharing |
 | **Locked** | `spsc_queue_locked.tpp` | `std::mutex` + `std::condition_variable` — threads block rather than spin |
 
-> **`.tpp` convention** — files with the `.tpp` extension are *template implementation* headers.  
-> They are `#include`-d directly into `main.cpp` (not compiled separately), which is the standard  
-> approach for header-only C++ template code that you want kept in a separate file from the class declaration.
-
 ---
 
 ## Project Structure
@@ -22,9 +18,9 @@ A C++17 micro-benchmark that compares two **Single-Producer Single-Consumer (SPS
 ```
 .
 ├── CMakeLists.txt              # Cross-platform build (CMake 3.16+)
-├── LICENSE                     # MIT
+├── LICENSE 
 ├── README.md
-├── main.cpp                    # Hand-written timing report (no external deps)
+├── main.cpp                    
 ├── benchmark_gbench.cpp        # Google Benchmark suite
 ├── spsc_queue_lock_free.tpp    # Lock-free SPSC queue implementation
 └── spsc_queue_locked.tpp       # Mutex + CV SPSC queue implementation
@@ -106,7 +102,7 @@ cl /std:c++17 /O2 /EHsc main.cpp /Fe:benchmark_manual.exe
 
 > Run on **Intel Core i7 (12 × 2611 MHz), 10M elements, buffer capacity 1024, Windows 11, MSVC Release build.**
 
-### benchmark_manual — hand-written timing report
+### benchmark_manual — timing report
 
 ```
   SPSC Queue Benchmark
@@ -213,4 +209,4 @@ The gap would narrow further with a larger buffer capacity (fewer full-buffer ev
 
 ## License
 
-[MIT](LICENSE) © 2026 Himanshu Singh
+(LICENSE) © 2026 Himanshu Singh
