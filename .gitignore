@@ -1,0 +1,45 @@
+# Compiled binaries
+*.exe
+*.obj
+*.o
+*.out
+*.pdb
+*.ilk
+*.exp
+*.lib
+
+# Build directories (CMake out-of-source builds)
+build/
+out/
+bin/
+Release/
+Debug/
+x64/
+x86/
+_deps/             # CMake FetchContent downloaded sources (e.g. Google Benchmark)
+
+
+# IDE / editor files
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.user
+*.aps
+.vscode/
+*.code-workspace
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Misc
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
